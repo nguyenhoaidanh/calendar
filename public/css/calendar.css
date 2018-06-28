@@ -1,0 +1,97 @@
+body{
+	background-color:#e5e5e5;
+}
+table
+{
+	border: 2px solid black;
+}
+.table{ position:static;}
+td
+{
+	border:2px solid black;
+	width: 80px;
+	height:60px;
+	text-align:center;
+}
+th
+{
+	background-color:#00bf5f;
+}
+#uvalid
+{
+	background-color:#e5e5e5;
+}
+#valid
+{
+	background-color:#aad4ff;
+}
+#today
+{
+	background-color:orange;
+}
+#AL{
+	color:green;
+	text-align:right;
+	font-weight:bold;
+}
+#DL{
+	padding-top:-5px;
+	color:red;
+	font-size:30px;
+	
+}
+#homnay
+{	
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+		padding-left:100px;
+}
+#timeToday #lunartimeToday #clock
+{
+	
+}
+#headRow
+{
+	height:40px;
+}
+#back{	font-weight:bold;
+		background-color:orange;
+		width:100px;font-size:20px;
+		height:50px;
+}
+#next{	font-weight:bold;
+		background-color:orange;
+		width:100px;
+		height:50px;font-size:20px;
+}
+#back:hover,#next:hover
+{	
+	background-color:#007f7f;
+}
+#myDate
+{	padding-left:5px;
+	font-size:35px;
+	width:300px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+#done
+{	margin-bottom:5px;
+	font-size:20px;
+	height:50px;
+	width:150px;
+	font-weight:bold;
+}
+#lunar
+{
+	color:blue;
+}
+#solar
+{
+	color:red;
+}
+#clock{color:#7f0000;}
+#headRow,#Wday
+{
+	font-size:30px;
+	height:50px;
+}
