@@ -1,11 +1,9 @@
+
 body{
 	background-color:#e5e5e5;
+	
+		
 }
-table
-{
-	border: 2px solid black;
-}
-.table{ position:static;}
 td
 {
 	border:2px solid black;
@@ -40,14 +38,49 @@ th
 	font-size:30px;
 	
 }
+table
+{
+	border: 2px solid black;
+	animation: fade 1s forwards;
+}
+@-webkit-keyframes fade
+{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
 #homnay
 {	
-	 font-family: Verdana, Arial, Helvetica, sans-serif;
-		padding-left:100px;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		padding-left:25%;
+		background-color:#00bfbf;
+		z-index:0;
+		margin-left:-10px;
+		margin-top:-20px;
+		height:200px;
+		animation: fade 0.5s forwards;
 }
-#timeToday #lunartimeToday #clock
+#leftimg
 {
-	
+	position:absolute;
+	top:35px;
+	left:10%;
+}
+#rightimg
+{	
+	position:absolute;
+	top:35px;
+	right:10%;	
+}
+
+.table{
+	position:static;
+	}
+#type
+{	animation: fade 1s forwards;
 }
 #headRow
 {
@@ -74,22 +107,27 @@ th
 	font-weight:bold;
 	margin-bottom:10px;
 }
+#done:hover{background-color:#007f7f;}
 #done
-{	margin-bottom:5px;
+{	padding-top:15px;
 	font-size:20px;
 	height:50px;
 	width:150px;
 	font-weight:bold;
+	background-color:orange;
 }
 #lunar
 {
-	color:blue;
+	color:red;
 }
 #solar
 {
 	color:red;
 }
-#clock{color:#7f0000;}
+#clock{
+	color:#3f7f00;
+margin-left	:50px;
+}
 #headRow,#Wday
 {
 	font-size:30px;
