@@ -273,7 +273,7 @@ function LunarSolarConverter() {
 		}
 		//tao lich
 		function createTable(thisMonth,thisYear)
-		{	
+		{	var html='';
 			var now=new Date();
 			var temp1=now.toString().split(" ");
 			//ngay thang nam hien tai
@@ -286,18 +286,18 @@ function LunarSolarConverter() {
 			//index of ngay dau tien
 			var index=DAYW.indexOf(temp2[0])+1;	
 			
-			document.write('<table id="calendar" align="center"> ');
+			html+='<table id="calendar" align="center"> ';
 			
 			var headRow='<tr id="headRow">'+
 			'<th><button id="back" >Back</button></th>'+
 			'<th id="tieude" colspan="5"></th>'+
 			'<th><button id="next" >Next</button></th></tr>';
-			document.write(headRow);
-			document.write('</tr>');
-			document.write('<tr>');
+			html+=headRow;
+			html+='</tr>';
+			html+='<tr>';
 			for(var i=1;i<=7;i++)
-			document.write('<th id="Wday">'+DAYW[i-1]+'</th>');
-			document.write('</tr>');
+			html+='<th id="Wday">'+DAYW[i-1]+'</th>';
+			html+='</tr>';
 			
 			var i,j; var k=1;
 			var rownum=5;
@@ -307,37 +307,39 @@ function LunarSolarConverter() {
 				rownum=6;
 			
 			for( i=1;i<=rownum;i++)
-			{	document.write('<tr>');	
+			{	html+='<tr>';	
 				for( j=1;j<=7;j++)
 				{		
 					if(i==1)
 						{
 							if(j<index)
-								document.write('<td id="uvalid"></td>');
+								html+='<td id="uvalid"></td>';
 							else if(isToday(k,thisMonth,thisYear))
-							{document.write('<td id="today">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>');
+							{html+='<td id="today">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>';
 							k++;}
 							else 
-							{document.write('<td id="valid">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>');
+							{html+='<td id="valid">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>';
 							k++;}
 						}
 					else{		
 						if(k<=daysInMonth(thisMonth,thisYear))
 						{
 							if(isToday(k,thisMonth,thisYear))
-							{document.write('<td id="today">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>');
+							{html+='<td id="today">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>';
 							k++;}
 							else
-							{document.write('<td id="valid">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>');
+							{html+='<td id="valid">'+contentCell(k,convertToLunar(k.toString(),thisMonth,thisYear))+'</td>';
 							k++;}
 						}
 						else 
-							document.write('<td id="uvalid"></td>');
+							html+='<td id="uvalid"></td>';
 					}
 				}		
-				document.write('</tr>');
+				html+='</tr>';
 			}
-			document.write('</table>');				
+			html+='</table>';	
+			$("#LICH").html(html);
+			
 		}	
 		$('#done').click(function ()
 		{	var str=$('#myDate').val();
